@@ -1,6 +1,8 @@
 # swig-android-csharedlibray
 java native interface / c code using swig
 
+swig, jdk, android ndk 21d
+
 http://www.swig.org/tutorial.html#Building%20a%20Java%20module
 
  
