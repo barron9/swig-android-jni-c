@@ -10,8 +10,10 @@ http://www.swig.org/tutorial.html#Building%20a%20Java%20module
  /* File : example.c */
  #include <time.h>
  double My_variable = 3.0;
- 
+ #include <android/log.h>
+
  int fact(int n) {
+      __android_log_print(ANDROID_LOG_ERROR,"11","22");
      if (n <= 1) return 1;
      else return n*fact(n-1);
  }
@@ -56,6 +58,8 @@ gcc -dynamiclib -o libexample.dylib -dy example.o example_wrap.o. (for mac dylib
 
 sudo ./aarch64-linux-android21-clang -shared -o libexample.so -Xlinker -soname=libexample.so /Users/berkintatlisu/example.c /Users/berkintatlisu/example_wrap.c
 (for android .so arm64) 
+
+sudo ./aarch64-linux-android21-clang -shared -o libexample.so -Xlinker -soname=libexample.so /Users/berkintatlisu/example.c /Users/berkintatlisu/example_wrap.c -llog
 
  $ cat main.java
  public class main {
